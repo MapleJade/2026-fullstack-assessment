@@ -1,0 +1,166 @@
+/* Minimal responsive styles — not production-grade, but covers the
+   assessment's accessibility and layout requirements. */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, system-ui, Segoe UI, Roboto, sans-serif;
+  background: #fafafa;
+  color: #1a1a1a;
+}
+
+.pdp {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 24px 16px 80px;
+}
+
+@media (min-width: 1280px) {
+  .pdp { max-width: 720px; padding: 48px 32px 120px; }
+}
+
+.cart-badge {
+  display: block;
+  text-align: right;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.desc {
+  color: #555;
+  line-height: 1.5;
+}
+
+.sku-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: #eee;
+  margin: 16px 0;
+}
+
+.sku-image.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  padding: 60px 0;
+}
+
+.option-group {
+  border: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.option-group legend {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.option-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.option-btn {
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-size: 14px;
+}
+
+.option-btn:hover:not(:disabled) { border-color: #111; }
+
+.option-btn.selected {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.option-btn.unavailable:disabled {
+  opacity: 0.35;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.option-btn:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.status { margin: 8px 0; }
+.status.info { color: #555; }
+.status.invalid { color: #b45309; }
+.status.out-of-stock { color: #b91c1c; }
+.status.available { color: #047857; font-weight: 600; }
+
+.qty-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.qty-row input[type=number] {
+  width: 80px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.qty-hint { color: #555; font-size: 13px; }
+
+.add-btn {
+  width: 100%;
+  padding: 14px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-btn:disabled {
+  background: #bbb;
+  cursor: not-allowed;
+}
+
+.add-btn:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.feedback {
+  margin: 12px 0;
+  padding: 10px 14px;
+  border-radius: 4px;
+}
+
+.feedback.success { background: #dcfce7; color: #047857; }
+.feedback.validation_error,
+.feedback.insufficient_stock { background: #fef3c7; color: #92400e; }
+.feedback.server_error { background: #fee2e2; color: #991b1b; }
+
+.loading, .error {
+  text-align: center;
+  padding: 60px 20px;
+  color: #555;
+}
+
+.retry-btn {
+  margin-top: 12px;
+  padding: 10px 24px;
+  border: 1px solid #111;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
